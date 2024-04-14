@@ -6,17 +6,12 @@ def pascal_triangle(n):
     """ pascal function """
     if n <= 0:
         return []
-    elif n == 1:
-        return ([[1]])
-    elif n == 2:
-        return ([[1], [1, 1]])
-    triangle = [[1], [1, 1]]
-    for i in range(3, n + 1):
-        prv_list = triangle[i-2]
-        list = [1]
-        lenght = len(prv_list)
-        for j in range(lenght - 1):
-            list.append(prv_list[j] + prv_list[j+1])
-        list.append(1)
-        triangle.append(list)
-    return (triangle)
+    triangle = [[1]]
+    for i in range(1, n):
+        prev_row = triangle[-1]
+        new_row = [1]
+        for j in range(1, i):
+            new_row.append(prev_row[j - 1] + prev_row[j])
+        new_row.append(1)
+        triangle.append(new_row)
+    return triangle
