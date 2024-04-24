@@ -4,8 +4,10 @@
 
 def minOperations(n: int) -> int:
     """min operations  """
-    if n <= 1:
+    if n < 1:
         return 0
+    if n == 1:
+        return 1
     if n == 2:
         return 2
     countOp = 2
