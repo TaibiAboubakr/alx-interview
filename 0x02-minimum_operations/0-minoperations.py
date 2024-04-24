@@ -10,7 +10,7 @@ def minOperations(n: int) -> int:
         return 2
     countOp = 2
     nbrH = 2
-    oldnbrH = 2
+    oldnbrH = 1
     while nbrH < n:
         if n % nbrH == 0:
             oldnbrH = nbrH
