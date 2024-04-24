@@ -16,6 +16,14 @@ def minOperations(n: int) -> int:
             oldnbrH = nbrH
             nbrH *= 2
             countOp += 2
+            while nbrH < n:
+                if n % nbrH == 0:
+                    oldnbrH = nbrH
+                    nbrH *= 2
+                    countOp += 2
+                else:
+                    nbrH += oldnbrH
+                    countOp += 1
         else:
             tmp = nbrH
             nbrH += oldnbrH
