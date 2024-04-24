@@ -25,8 +25,6 @@ def minOperations(n: int) -> int:
                     nbrH += oldnbrH
                     countOp += 1
         else:
-            tmp = nbrH
             nbrH += 1
-            oldnbrH = tmp
             countOp += 1
     return countOp
