@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ is Winner """
 
+
 def isWinner(x, nums):
     """ isWinner(x, nums) """
 
