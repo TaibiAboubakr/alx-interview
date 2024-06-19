@@ -14,19 +14,14 @@ def isWinner(x, nums):
                 for i in range(p * p, max_num + 1, p):
                     is_prime[i] = False
             p += 1
-        prime_counts = [0] * (max_num + 1)
-        count = 0
-        for i in range(2, max_num + 1):
-            if is_prime[i]:
-                count += 1
-            prime_counts[i] = count
-        return prime_counts, is_prime
+
+        return is_prime
 
     if x <= 0 or not nums:
         return None
     
     max_n = max(nums)
-    prime_counts, is_prime = sieve_of_eratosthenes(max_n)
+    is_primeNumber = sieve_of_eratosthenes(max_n)
     
     maria_wins = 0
     ben_wins = 0
@@ -37,7 +32,7 @@ def isWinner(x, nums):
         else:
             primes = []
             for i in range(2, n + 1):
-                if is_prime[i]:
+                if is_primeNumber[i]:
                     primes.append(i)
             if len(primes) % 2 == 0:
                 ben_wins += 1
